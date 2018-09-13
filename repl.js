@@ -20,6 +20,7 @@ function noop() {}
 module.paths.push(packagePath);
 
 let packageJSON = {
+  private: true,
   dependencies: {}
 };
 
