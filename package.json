@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "repl enhance",
   "main": "repl.js",
+  "bin": {
+    "noder": "repl.js",
+    "repl-enhance": "repl.js"
+  },
   "scripts": {
     "lint": "eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +26,7 @@
   },
   "homepage": "https://github.com/wmzy/repl-enhance#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.0.1",
@@ -41,8 +46,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "cross-env NODE_ENV=production eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "rimraf": "^2.6.2"
   }
 }
